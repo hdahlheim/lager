@@ -1,0 +1,8 @@
+<div class="space-y-4">
+  <h1 class="text-4xl font-bold">Lager Dashboard</h1>
+  <dl class="grid grid-cols-3 gap-8 mx-auto">
+    <%= live_component @socket, StatsComponent, title: "Lager Bestand", content: "40 Flaschen" %>
+    <%= live_component @socket, StatsComponent, title: "Letzte Bestellung", content: "20.04.2020" %>
+    <%= live_component @socket, StatsComponent, title: "Letzte Rechnung", content: "100 CHF" %>
+  </dl>
+</div>

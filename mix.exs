@@ -46,7 +46,9 @@ defmodule Lager.MixProject do
       {:telemetry_poller, "~> 0.4"},
       {:gettext, "~> 0.11"},
       {:jason, "~> 1.0"},
-      {:plug_cowboy, "~> 2.0"}
+      {:plug_cowboy, "~> 2.0"},
+      {:phoenix_active_link, "~> 0.3.1"},
+      {:credo, "~> 1.5.3", only: [:dev, :test], runtime: false}
     ]
   end
 

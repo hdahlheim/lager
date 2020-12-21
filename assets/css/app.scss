@@ -9,6 +9,8 @@
 
 @tailwind utilities;
 
+ [x-cloak] { display: none; }
+
 /* LiveView specific classes for your customizations */
 .phx-no-feedback.invalid-feedback,
 .phx-no-feedback .invalid-feedback {

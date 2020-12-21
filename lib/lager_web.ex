@@ -89,6 +89,8 @@ defmodule LagerWeb do
 
       import LagerWeb.ErrorHelpers
       import LagerWeb.Gettext
+      # Add active link support
+      import PhoenixActiveLink
       alias LagerWeb.Router.Helpers, as: Routes
     end
   end

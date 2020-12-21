@@ -17,7 +17,7 @@ defmodule LagerWeb.Router do
   scope "/", LagerWeb do
     pipe_through :browser
 
-    live "/", PageLive, :index
+    live "/", Dashboard
   end
 
   # Other scopes may use custom stacks.
@@ -37,7 +37,7 @@ defmodule LagerWeb.Router do
 
     scope "/" do
       pipe_through :browser
-      live_dashboard "/dashboard", metrics: LagerWeb.Telemetry
+      live_dashboard "/system-stats", metrics: LagerWeb.Telemetry
     end
   end
 end
