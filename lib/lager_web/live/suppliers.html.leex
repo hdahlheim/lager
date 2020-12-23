@@ -1,0 +1,61 @@
+<div class="flex items-center justify-between mb-4">
+  <h1 class="text-4xl font-bold">Lieferanten</h1>
+  <span class="rounded-md shadow">
+    <button class="py-2.5 px-3 text-white bg-gray-700 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-700 focus:ring-offset-white focus:ring-offset-2">
+      Neuen Liferant erfassen
+    </button>
+  </span>
+</div>
+
+<div class="overflow-hidden bg-white shadow sm:rounded-md">
+  <ul class="divide-y divide-gray-200">
+    <%= for supplier <- @suppliers do %>
+    <li id="suppliers_list_item-<%= supplier.id %>">
+      <a href="#" class="block hover:bg-gray-50">
+        <div class="px-4 py-4 sm:px-6">
+          <div class="flex items-center justify-between">
+            <p class="text-sm font-medium text-blue-600 truncate">
+              <%= supplier.name %>
+            </p>
+          </div>
+          <div class="mt-2 sm:flex sm:justify-between">
+            <div class="sm:flex">
+              <%= if supplier.phone do %>
+              <p class="flex items-center text-sm text-gray-500">
+                <svg class="flex-shrink-0 mr-1.5 h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                  <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
+                </svg>
+                <%= supplier.phone %>
+              </p>
+              <% end %>
+              <%= if supplier.email do %>
+              <p class="flex items-center text-sm text-gray-500">
+                <svg class="flex-shrink-0 mr-1.5 h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                  <path fill-rule="evenodd" d="M14.243 5.757a6 6 0 10-.986 9.284 1 1 0 111.087 1.678A8 8 0 1118 10a3 3 0 01-4.8 2.401A4 4 0 1114 10a1 1 0 102 0c0-1.537-.586-3.07-1.757-4.243zM12 10a2 2 0 10-4 0 2 2 0 004 0z" clip-rule="evenodd" />
+                </svg>
+                <%= supplier.email %>
+              </p>
+              <% end %>
+              <p class="flex items-center mt-2 text-sm text-gray-500 sm:mt-0 sm:ml-6">
+                <!-- Heroicon name: location-marker -->
+                <svg class="flex-shrink-0 mr-1.5 h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                  <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" />
+                </svg>
+                <%= supplier.street %> | <%= supplier.zip %> <%= supplier.city %>
+              </p>
+            </div>
+            <div class="flex items-center mt-2 text-sm text-gray-500 sm:mt-0">
+              <svg class="flex-shrink-0 mr-1.5 h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                <path fill-rule="evenodd" d="M4.083 9h1.946c.089-1.546.383-2.97.837-4.118A6.004 6.004 0 004.083 9zM10 2a8 8 0 100 16 8 8 0 000-16zm0 2c-.076 0-.232.032-.465.262-.238.234-.497.623-.737 1.182-.389.907-.673 2.142-.766 3.556h3.936c-.093-1.414-.377-2.649-.766-3.556-.24-.56-.5-.948-.737-1.182C10.232 4.032 10.076 4 10 4zm3.971 5c-.089-1.546-.383-2.97-.837-4.118A6.004 6.004 0 0115.917 9h-1.946zm-2.003 2H8.032c.093 1.414.377 2.649.766 3.556.24.56.5.948.737 1.182.233.23.389.262.465.262.076 0 .232-.032.465-.262.238-.234.498-.623.737-1.182.389-.907.673-2.142.766-3.556zm1.166 4.118c.454-1.147.748-2.572.837-4.118h1.946a6.004 6.004 0 01-2.783 4.118zm-6.268 0C6.412 13.97 6.118 12.546 6.03 11H4.083a6.004 6.004 0 002.783 4.118z" clip-rule="evenodd" />
+              </svg>
+              <p>
+                <%= supplier.website %>
+              </p>
+            </div>
+          </div>
+        </div>
+      </a>
+    </li>
+    <% end %>
+  </ul>
+</div>

@@ -18,6 +18,9 @@ defmodule LagerWeb.Router do
     pipe_through :browser
 
     live "/", Dashboard
+    live "/products", Products
+    live "/inventory", Inventory
+    live "/suppliers", Suppliers
   end
 
   # Other scopes may use custom stacks.

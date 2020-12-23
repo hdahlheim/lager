@@ -10,6 +10,9 @@ use Mix.Config
 config :lager,
   ecto_repos: [Lager.Repo]
 
+config :lager, Lager.Repo,
+  migration_timestamps: [type: :utc_datetime_usec]
+
 # Configures the endpoint
 config :lager, LagerWeb.Endpoint,
   url: [host: "localhost"],
