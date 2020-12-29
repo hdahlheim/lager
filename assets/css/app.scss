@@ -2,11 +2,6 @@
 // @import "./phoenix.css";
 @tailwind base;
 @tailwind components;
-
-/* purgecss start ignore */
-@import "../node_modules/nprogress/nprogress.css";
-/* purgecss end ignore */
-
 @tailwind utilities;
 
  [x-cloak] { display: none; }
