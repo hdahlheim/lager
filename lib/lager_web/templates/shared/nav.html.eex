@@ -33,23 +33,23 @@
         </div>
         <div class="hidden sm:block sm:ml-6">
           <div class="flex space-x-4">
-            <%= active_link @conn, "Dashboard", to: Routes.live_path(@conn, LagerWeb.Dashboard),
+            <%= active_link @conn, "Dashboard", to: Routes.dashboard_path(@conn, :home),
                 active: :exact,
                 class: "px-3 py-2 text-sm font-medium rounded-md",
                 class_active: "text-white bg-gray-900",
                 class_inactive: "text-gray-300 hover:bg-gray-700 hover:text-white"
             %>
-            <%= active_link @conn, "Produkte", to: "/products",
+            <%= active_link @conn, "Produkte", to: Routes.products_index_path(@conn, :index),
                 class: "px-3 py-2 text-sm font-medium rounded-md",
                 class_active: "text-white bg-gray-900",
                 class_inactive: "text-gray-300 hover:bg-gray-700 hover:text-white"
             %>
-            <%= active_link @conn, "Inventar", to: "/inventory",
+            <%= active_link @conn, "Inventar", to: Routes.inventory_index_path(@conn, :index),
                 class: "px-3 py-2 text-sm font-medium rounded-md",
                 class_active: "text-white bg-gray-900",
                 class_inactive: "text-gray-300 hover:bg-gray-700 hover:text-white"
             %>
-            <%= active_link @conn, "Lieferanten", to: "/suppliers",
+            <%= active_link @conn, "Lieferanten", to: Routes.suppliers_index_path(@conn, :index),
                 class: "px-3 py-2 text-sm font-medium rounded-md",
                 class_active: "text-white bg-gray-900",
                 class_inactive: "text-gray-300 hover:bg-gray-700 hover:text-white"
@@ -99,18 +99,23 @@
 
   <div x-cloak x-show="mobileOpen" @click.away="mobileOpen = false" class="sm:hidden">
     <div class="px-2 pt-2 pb-3 space-y-1">
-      <%= active_link @conn, "Dashboard", to: Routes.live_path(@conn, LagerWeb.Dashboard),
+      <%= active_link @conn, "Dashboard", to: Routes.dashboard_path(@conn, :home),
           active: :exact,
           class: "block px-3 py-2 text-base font-medium rounded-md",
           class_active: "text-white bg-gray-900",
           class_inactive: "text-gray-300 hover:bg-gray-700 hover:text-white"
       %>
-      <%= active_link @conn, "Produkte", to: "/products",
+      <%= active_link @conn, "Produkte", to: Routes.products_index_path(@conn, :index),
           class: "block px-3 py-2 text-base font-medium",
           class_active: "text-white bg-gray-900",
           class_inactive: "text-gray-300 hover:bg-gray-700 hover:text-white"
       %>
-      <%= active_link @conn, "Lieferanten", to: "/suppliers",
+      <%= active_link @conn, "Inventar", to: Routes.inventory_index_path(@conn, :index),
+          class: "block px-3 py-2 text-base font-medium",
+          class_active: "text-white bg-gray-900",
+          class_inactive: "text-gray-300 hover:bg-gray-700 hover:text-white"
+      %>
+      <%= active_link @conn, "Lieferanten", to: Routes.suppliers_index_path(@conn, :index),
           class: "block px-3 py-2 text-base font-medium",
           class_active: "text-white bg-gray-900",
           class_inactive: "text-gray-300 hover:bg-gray-700 hover:text-white"

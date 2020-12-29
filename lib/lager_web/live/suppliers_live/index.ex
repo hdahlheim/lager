@@ -1,4 +1,4 @@
-defmodule LagerWeb.Suppliers do
+defmodule LagerWeb.SuppliersLive.Index do
   use LagerWeb, :live_view
 
   alias Lager.SupplyManagement

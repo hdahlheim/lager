@@ -1,4 +1,4 @@
-defmodule LagerWeb.Inventory do
+defmodule LagerWeb.InventoryLive.Index do
   use LagerWeb, :live_view
 
   alias Lager.Inventory

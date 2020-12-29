@@ -1,4 +1,4 @@
-defmodule LagerWeb.Dashboard do
+defmodule LagerWeb.DashboardLive do
   @moduledoc false
   use LagerWeb, :live_view
 

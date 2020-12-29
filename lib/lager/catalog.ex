@@ -8,6 +8,8 @@ defmodule Lager.Catalog do
 
   alias Lager.Catalog.Product
 
+  def new_product, do: %Product{}
+
   @doc """
   Returns the list of products.
 

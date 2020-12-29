@@ -1,0 +1,49 @@
+<%= if @live_action in [:edit] do %>
+  <%= live_modal @socket, LagerWeb.ProductsLive.FormComponent,
+    id: @product.id,
+    title: @page_title,
+    action: @live_action,
+    product: @product,
+    return_to: Routes.products_show_path(@socket, :show, @product) %>
+<% end %>
+
+<div class="space-y-2">
+  <div>
+    <span><%= live_redirect "Zurück", to: Routes.products_index_path(@socket, :index), class: "text-sm text-gray-400" %></span>
+  </div>
+
+  <div class="px-6 py-4 space-y-4 bg-white rounded-md shadow">
+    <div class="flex items-start justify-between">
+      <h1 class="text-4xl font-bold"><%= @product.name %></h1>
+      <span><%= live_patch "Bearbeiten", to: Routes.products_show_path(@socket, :edit, @product), class: "text-blue-600" %></span>
+    </div>
+    <dl class="space-y-2">
+      <div>
+        <dt class="font-semibold text-gray-500">
+          Name:
+        </dt>
+        <dd class="text-xl font-medium">
+          <%= @product.name %>
+        </dd>
+      </div>
+      <div>
+        <dt class="font-semibold text-gray-500">
+          Verpackung:
+        </dt>
+        <dd class="text-xl font-medium">
+          <%= @product.unit_type %>
+        </dd>
+      </div>
+      <div>
+        <dt class="font-semibold text-gray-500">
+          Volumen:
+        </dt>
+        <dd class="text-xl font-medium">
+          <%= @product.unit_volume %> L
+        </dd>
+      </div>
+
+    </dl>
+
+  </div>
+</div>

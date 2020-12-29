@@ -1,18 +1,25 @@
 <div class="flex items-center justify-between mb-4">
   <h1 class="text-4xl font-bold">Produkte</h1>
   <span class="rounded-md shadow">
-    <button class="py-2.5 px-3 text-white bg-gray-700 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-700 focus:ring-offset-white focus:ring-offset-2">
-      Neues Produkt erfassen
-    </button>
+    <%= live_patch "Neues Produkt erfassen", to: Routes.products_index_path(@socket, :new), class: " inline-block py-2.5 px-3 text-white bg-gray-700 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-700 focus:ring-offset-white focus:ring-offset-2" %>
   </span>
 </div>
+
+<%= if @live_action in [:new, :edit] do %>
+  <%= live_modal @socket, LagerWeb.ProductsLive.FormComponent,
+    id: @product.id || :new,
+    title: @page_title,
+    product: @product,
+    return_to: Routes.products_index_path(@socket, :index)
+   %>
+<% end %>
 
 <div class="flex flex-col -mx-2 sm:mx-0">
   <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
     <div class="inline-block min-w-full py-2 align-middle sm:px-6 lg:px-8">
       <div class="overflow-hidden border-b border-gray-200 shadow sm:rounded-lg">
         <table class="min-w-full divide-y divide-gray-200">
-          <thead class="bg-gray-600">
+          <thead class="bg-gray-800">
             <tr>
               <th scope="col" class="px-6 py-3 text-xs font-medium tracking-wider text-left text-gray-100 uppercase">
                 Name
@@ -24,7 +31,7 @@
                 Volumen
               </th>
               <th scope="col" class="relative px-6 py-3">
-                <span class="sr-only">Bearbeiten</span>
+                <span class="sr-only">Aktionen</span>
               </th>
             </tr>
           </thead>
@@ -41,7 +48,9 @@
                 <%= product.unit_volume %> L
               </td>
               <td class="px-6 py-4 text-sm font-medium text-right whitespace-nowrap">
-                <a href="#" class="text-blue-600 hover:text-blue-900">Bearbeiten</a>
+                <%= live_redirect "Anzeigen", to: Routes.products_show_path(@socket, :show, product), class: "text-blue-600 hover:text-blue-900" %>
+                 |
+                <%= live_patch "Bearbeiten", to: Routes.products_index_path(@socket, :edit, product), class: "text-blue-600 hover:text-blue-900" %>
               </td>
             </tr>
           <% end %>
