@@ -11,7 +11,7 @@
 <div class="flex items-center justify-center h-48 bg-gray-100 rounded shadow-inner">
   <p class="text-gray-600">Es wurden noch keine Lieferanten erfasst.</p>
 </div>
-<%= else %>
+<% else %>
 <div class="overflow-hidden bg-white shadow sm:rounded-md">
   <ul class="divide-y divide-gray-200">
     <%= for supplier <- @suppliers do %>
