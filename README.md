@@ -1,5 +1,10 @@
 # Lager
 
+Lager is a beverage inventory system written in elixir using Phoenix and Phoenix LiveView.
+The project is still WIP.
+
+## Setup
+
 To start your Phoenix server:
 
   * Install dependencies with `mix deps.get`
