@@ -1,12 +1,17 @@
 <div class="flex items-center justify-between mb-4">
   <h1 class="text-4xl font-bold">Lieferanten</h1>
   <span class="rounded-md shadow">
-    <button class="py-2.5 px-3 text-white bg-gray-700 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-700 focus:ring-offset-white focus:ring-offset-2">
+    <a class="inline-block py-2.5 px-3 text-white bg-gray-800 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-700 focus:ring-offset-white focus:ring-offset-2">
       Neuen Liferant erfassen
-    </button>
+    </a>
   </span>
 </div>
 
+<%= if @suppliers === [] do %>
+<div class="flex items-center justify-center h-48 bg-gray-100 rounded shadow-inner">
+  <p class="text-gray-600">Es wurden noch keine Liferanten erfasst.</p>
+</div>
+<%= else %>
 <div class="overflow-hidden bg-white shadow sm:rounded-md">
   <ul class="divide-y divide-gray-200">
     <%= for supplier <- @suppliers do %>
@@ -59,3 +64,4 @@
     <% end %>
   </ul>
 </div>
+<% end %>
